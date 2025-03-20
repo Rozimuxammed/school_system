@@ -1,4 +1,4 @@
-import React from 'react';
+import { Table } from '../components/UI/table';
 
 export default function Teachers() {
     const teachers = [
@@ -9,31 +9,10 @@ export default function Teachers() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-8">Teachers</h1>
-            <div className="bg-white rounded-lg shadow overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                        <tr>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                        {teachers.map((teacher) => (
-                            <tr key={teacher.id}>
-                                <td className="px-6 py-4 whitespace-nowrap">{teacher.name}</td>
-                                <td className="px-6 py-4 whitespace-nowrap">{teacher.subject}</td>
-                                <td className="px-6 py-4 whitespace-nowrap">{teacher.email}</td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <button className="text-blue-500 hover:text-blue-700 mr-2">Edit</button>
-                                    <button className="text-red-500 hover:text-red-700">Delete</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">Teachers</h2>
+            <div className="bg-white rounded-2xl shadow overflow-hidden px-6 py-7">
+                <h3 className='font-semibold text-xl text-foreground mb-5'>Fees Collection Table</h3>
+                <Table data={teachers} />
             </div>
         </div>
     );

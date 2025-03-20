@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -17,20 +17,20 @@ function Sidebar() {
   const [isHomeworksOpen, setIsHomeworksOpen] = useState(false);
 
   return (
-    <div className="w-64 bg-white shadow-lg h-full flex flex-col">
+    <div className="w-64 bg-sidebar shadow-lg min-h-screen flex flex-col m-4 p-[18px] rounded-2xl">
       <div className="p-6">
-        <h1 className="text-2xl font-bold text-gray-800">School App</h1>
+        <h1 className="text-2xl font-bold text-sidebar_foreground">School App</h1>
       </div>
       <nav className="mt-6 flex-grow">
-        <NavLink to="/" className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">
+        <NavLink to="/" className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
           <LayoutDashboard className="w-5 h-5 mr-3" />
           <span>Dashboard</span>
         </NavLink>
-        <NavLink to="/teachers" className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">
+        <NavLink to="/teachers" className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
           <Users className="w-5 h-5 mr-3" />
           <span>Teachers</span>
         </NavLink>
-        <NavLink to="/students" className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors">
+        <NavLink to="/students" className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
           <GraduationCap className="w-5 h-5 mr-3" />
           <span>Students</span>
         </NavLink>
@@ -38,7 +38,7 @@ function Sidebar() {
         {/* Grades dropdown */}
         <button
           onClick={() => setIsGradesOpen(!isGradesOpen)}
-          className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors w-full"
+          className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors w-full"
         >
           <ClipboardList className="w-5 h-5 mr-3" />
           <span>Grades</span>
@@ -46,10 +46,10 @@ function Sidebar() {
         </button>
         {isGradesOpen && (
           <div className="ml-6">
-            <NavLink to="/teacher-grades" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/teacher-grades" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Teacher Grades
             </NavLink>
-            <NavLink to="/student-grades" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/student-grades" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Student Grades
             </NavLink>
           </div>
@@ -58,7 +58,7 @@ function Sidebar() {
         {/* Schedule dropdown */}
         <button
           onClick={() => setIsScheduleOpen(!isScheduleOpen)}
-          className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors w-full"
+          className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors w-full"
         >
           <Calendar className="w-5 h-5 mr-3" />
           <span>Schedule</span>
@@ -66,10 +66,10 @@ function Sidebar() {
         </button>
         {isScheduleOpen && (
           <div className="ml-6">
-            <NavLink to="/teacher-schedule" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/teacher-schedule" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Teacher Schedule
             </NavLink>
-            <NavLink to="/student-schedule" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/student-schedule" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Student Schedule
             </NavLink>
           </div>
@@ -78,7 +78,7 @@ function Sidebar() {
         {/* Homeworks dropdown */}
         <button
           onClick={() => setIsHomeworksOpen(!isHomeworksOpen)}
-          className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors w-full"
+          className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors w-full"
         >
           <BookOpen className="w-5 h-5 mr-3" />
           <span>Homeworks</span>
@@ -86,17 +86,17 @@ function Sidebar() {
         </button>
         {isHomeworksOpen && (
           <div className="ml-6">
-            <NavLink to="/teacher-homeworks" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/teacher-homeworks" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Teacher Homeworks
             </NavLink>
-            <NavLink to="/student-homeworks" className="block px-6 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+            <NavLink to="/student-homeworks" className="block px-6 py-2 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors">
               Student Homeworks
             </NavLink>
           </div>
         )}
       </nav>
 
-      <button className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors w-full">
+      <button className="flex items-center px-6 py-3 text-sidebar_foreground hover:text-sidebar rounded-lg hover:bg-gray-100 transition-colors w-full">
         <LogOut className="w-5 h-5 mr-3" />
         <span>Logout</span>
       </button>
